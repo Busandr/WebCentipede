@@ -7,6 +7,7 @@ data class Link(
     val id: String = createId(),
     var name: String = "",
     val creationTime: Long = System.currentTimeMillis(),
+    val url: String = "",
     var favicon: Bitmap? = null,
     var isActive: Boolean = true,
     var keepData: Boolean = false,
