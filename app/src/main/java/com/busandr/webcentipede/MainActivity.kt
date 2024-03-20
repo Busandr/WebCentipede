@@ -56,19 +56,19 @@ class MainActivity : AppCompatActivity() {
             val positiveButtonClick =
                 { dialog: DialogInterface, which: Int ->
 
-                    val textInput = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText)
-                    val linkName = textInput.text.toString()
-
+                    val textInputURL = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_URL).text.toString()
+                    val textInputName = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_name).text.toString()
+                    val linkInstance = Link(name = textInputName, url = textInputURL)
 
                     //add the link to list
-                    if (linkName.isEmpty())
+                    if (textInputURL.isEmpty())
                         Toast.makeText(this, "Fill this", Toast.LENGTH_SHORT).show()
                     else {
-                        linkList.add(Link(name = linkName))
+//                        linkList.add(Link(name = textInputURL))
+                        linkList.add(linkInstance)
                         linkAdapter.notifyItemInserted(linkList.lastIndex)
-
-                        //now insert to db
-                        var insertCheck = dbHelper.insertLink(Link(name = linkName))
+//                        var insertCheck = dbHelper.insertLink(Link(name = textInputURL))
+                        var insertCheck = dbHelper.insertLink(linkInstance)
                         //todo make warning for not saving
                         if (insertCheck < 0)
                             Toast.makeText(this, "Not saved", Toast.LENGTH_SHORT).show()
