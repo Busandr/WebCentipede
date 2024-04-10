@@ -71,8 +71,6 @@ class MainActivity : AppCompatActivity() {
                     if (textInputURL.isEmpty())
                         Toast.makeText(this, "Fill this", Toast.LENGTH_SHORT).show()
                     else {
-                var site = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_name)
-                val str = site.text.toString()
                 
 //                        linkList.add(Link(name = textInputURL))
                         linkList.add(linkInstance)
