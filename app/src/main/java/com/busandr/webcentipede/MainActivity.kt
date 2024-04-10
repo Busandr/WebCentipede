@@ -58,6 +58,13 @@ class MainActivity : AppCompatActivity() {
 
                     val textInputURL = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_URL).text.toString()
                     val textInputName = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_name).text.toString()
+
+                    
+                    val intent = Intent(this, BrowserActivity::class.java)
+                    intent.putExtra("site", textInputURL)
+                    this.startActivity(intent)
+
+                    
                     val linkInstance = Link(name = textInputName, url = textInputURL)
 
                     //add the link to list
@@ -66,9 +73,6 @@ class MainActivity : AppCompatActivity() {
                     else {
                 var site = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_name)
                 val str = site.text.toString()
-                val intent = Intent(this, BrowserActivity::class.java)
-                intent.putExtra("site",str)
-                this.startActivity(intent)
                 
 //                        linkList.add(Link(name = textInputURL))
                         linkList.add(linkInstance)
