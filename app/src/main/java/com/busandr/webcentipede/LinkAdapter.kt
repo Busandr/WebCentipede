@@ -43,9 +43,10 @@ class LinkAdapter(private val context: Context, private val linkList: MutableLis
         }
 
         holder.removeButton.setOnClickListener{
+            dbHelper.deleteLink(linkPosition.id)
             linkList.removeAt(position)
             notifyItemRemoved(position)
-            dbHelper.deleteLink(linkPosition.id)
+            notifyItemRangeChanged(position, itemCount)
         }
     }
 }
