@@ -4,10 +4,10 @@ import android.graphics.Bitmap
 import java.util.UUID
 
 data class Link(
-    val id: String = createId(),
     var name: String = "",
-    val creationTime: Long = System.currentTimeMillis(),
     val url: String = "",
+    val id: String = createId(),
+    val creationTime: Long = System.currentTimeMillis(),
     var favicon: Bitmap? = null,
     var isActive: Boolean = true,
     var keepData: Boolean = false,
