@@ -18,8 +18,10 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_USER_TABLE = ("CREATE TABLE " + TABLE_NAME +
-                " (" + ID + " TEXT, " +
-                NAME + " TEXT" + ")" )
+                " (" + 
+                ID + " TEXT, " +
+                NAME + " TEXT" + 
+                ")" )
         db.execSQL(CREATE_USER_TABLE)
     }
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -91,7 +93,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
 
     fun deleteLink(id: String): Int {
         val db = this.writableDatabase
-        val success = db.delete(TABLE_NAME, "ID=?", arrayOf(id))
+        val success = db.delete(TABLE_NAME, "id=?", arrayOf(id))
 
         db.close()
         return success
