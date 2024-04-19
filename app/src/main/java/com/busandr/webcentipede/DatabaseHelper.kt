@@ -12,8 +12,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         private const val DATABASE_NAME = "links_base.db"
         private const val DATABASE_VERSION = 1
         private const val TABLE_NAME = "links"
-        val ID = "id"
-        val NAME = "name"
+        const val ID = "id"
+        const val NAME = "name"
+        const val URL = "url"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
