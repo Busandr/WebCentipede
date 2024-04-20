@@ -12,16 +12,18 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         private const val DATABASE_NAME = "links_base.db"
         private const val DATABASE_VERSION = 1
         private const val TABLE_NAME = "links"
-        const val ID = "id"
+        
         const val NAME = "name"
         const val URL = "url"
+        const val ID = "id"
     }
 
     override fun onCreate(db: SQLiteDatabase) {
         val CREATE_USER_TABLE = ("CREATE TABLE " + TABLE_NAME +
                 " (" + 
-                ID + " TEXT, " +
-                NAME + " TEXT" + 
+                NAME + " TEXT," +
+                URL + " TEXT," +
+                ID + " TEXT" +
                 ")" )
         db.execSQL(CREATE_USER_TABLE)
     }
@@ -95,7 +97,6 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun deleteLink(id: String): Int {
         val db = this.writableDatabase
         val success = db.delete(TABLE_NAME, "id=?", arrayOf(id))
-
         db.close()
         return success
     }
