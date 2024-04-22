@@ -55,12 +55,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             db.execSQL(query)
             return ArrayList()
         }
-        var id: String
         var name: String
+        var url: String
+        var id: String
         if (result.moveToFirst()) {
-            do {
+            do {name = result.getString(result.getColumnIndexOrThrow("name"))
+                url = result.getString(result.getColumnIndexOrThrow("url"))
                 id = result.getString(result.getColumnIndexOrThrow("id"))
-                name = result.getString(result.getColumnIndexOrThrow("name"))
                 val link = Link(id, name)
                 list.add(link)
             } while (result.moveToNext())
