@@ -59,10 +59,11 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         var url: String
         var id: String
         if (result.moveToFirst()) {
-            do {name = result.getString(result.getColumnIndexOrThrow("name"))
+            do {
+                name = result.getString(result.getColumnIndexOrThrow("name"))
                 url = result.getString(result.getColumnIndexOrThrow("url"))
                 id = result.getString(result.getColumnIndexOrThrow("id"))
-                val link = Link(id, name)
+                val link = Link(name, url,id)
                 list.add(link)
             } while (result.moveToNext())
         }
@@ -76,8 +77,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun insertLink(link: Link): Long {
         val db = this.writableDatabase
         val values = ContentValues().apply {
-            put(ID, link.id)
             put(NAME, link.name)
+            put(URL, link.url)
+            put(ID, link.id)
         }
         val success = db.insert(TABLE_NAME, null, values)
         db.close()
@@ -87,8 +89,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     fun updateLink(link: Link): Int{
         val db = this.writableDatabase
         val cv = ContentValues().apply {
-            put(ID, link.id)
             put(NAME, link.name)
+            put(URL, link.url)
+            put(ID, link.id)
         }
         val success = db.update(TABLE_NAME, cv, "id=" + link.id, null)
         db.close()
