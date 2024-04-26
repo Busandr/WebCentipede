@@ -5,7 +5,7 @@ import java.util.UUID
 
 data class Link(
     var name: String,
-    val url: String = "",
+    val url: String,
     val id: String = createId(),
     val creationTime: Long = System.currentTimeMillis(),
     var favicon: Bitmap? = null,
