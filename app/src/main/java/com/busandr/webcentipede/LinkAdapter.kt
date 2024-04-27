@@ -16,11 +16,9 @@ class LinkAdapter(private val context: Context, private val linkList: MutableLis
     val dbHelper = DatabaseHelper(context)
 
     class LinkViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-
+        val linkPic: ImageView = itemView.findViewById(R.id.link_pic)
         val linkName: TextView = itemView.findViewById(R.id.link_text)
         val removeButton: Button = itemView.findViewById(R.id.link_button)
-
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LinkViewHolder {
         val view = LayoutInflater.from(parent.context)
