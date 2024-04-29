@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val TAG = "MainActivity"
         val toolbar_main = findViewById<Toolbar>(R.id.toolbar_main)
         setSupportActionBar(toolbar_main)
 
