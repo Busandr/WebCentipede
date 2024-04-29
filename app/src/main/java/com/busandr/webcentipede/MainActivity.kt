@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 import com.busandr.webcentipede.ui.MainSettingsActivity
+import android.util.Log
+
 
 
 //activity shows link_list + settings + fab
