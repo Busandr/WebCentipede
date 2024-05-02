@@ -6,6 +6,7 @@ import android.net.http.SslError
 import android.os.Bundle
 import android.view.MotionEvent
 import android.view.View
+import android.util.Log
 import android.webkit.SslErrorHandler
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -19,5 +20,6 @@ class BrowserActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_browser)
+        val TAG = "BrowserActivity"
     }
 }
