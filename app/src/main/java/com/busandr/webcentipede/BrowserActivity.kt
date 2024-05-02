@@ -21,5 +21,8 @@ class BrowserActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_browser)
         val TAG = "BrowserActivity"
+        
+        val linkStr = intent.getStringExtra("site").toString()
+        var myWebView: WebView = findViewById(R.id.browser_webview)
     }
 }
