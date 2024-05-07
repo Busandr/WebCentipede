@@ -23,8 +23,11 @@ class BrowserActivity: AppCompatActivity() {
         val TAG = "BrowserActivity"
         
         val linkStr = intent.getStringExtra("site").toString()
-        var myWebView: WebView = findViewById(R.id.browser_webview)
+        var browserWebView: WebView = findViewById(R.id.browser_webview)
+        browserWebView.settings.javaScriptEnabled = true
 
-        myWebView.settings.javaScriptEnabled = true
+        class browserWebViewClient : WebViewClient() {
+
+        }
     }
 }
