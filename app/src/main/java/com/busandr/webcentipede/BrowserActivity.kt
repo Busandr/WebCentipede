@@ -27,7 +27,9 @@ class BrowserActivity: AppCompatActivity() {
         browserWebView.settings.javaScriptEnabled = true
 
         class browserWebViewClient : WebViewClient() {
-
+            //not yet...
         }
+        
+        browserWebView.webViewClient = browserWebViewClient()
     }
 }
