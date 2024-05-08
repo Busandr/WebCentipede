@@ -31,5 +31,6 @@ class BrowserActivity: AppCompatActivity() {
         }
         
         browserWebView.webViewClient = browserWebViewClient()
+        browserWebView.loadUrl(linkStr)
     }
 }
