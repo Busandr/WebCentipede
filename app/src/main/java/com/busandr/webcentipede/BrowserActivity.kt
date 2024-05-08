@@ -31,6 +31,8 @@ class BrowserActivity: AppCompatActivity() {
         }
         
         browserWebView.webViewClient = browserWebViewClient()
+        val confirmLink: View = findViewById(R.id.confirmLink)
+        
         browserWebView.loadUrl(linkStr)
     }
 }
