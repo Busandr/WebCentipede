@@ -26,6 +26,8 @@ class BrowserActivity: AppCompatActivity() {
         var browserWebView: WebView = findViewById(R.id.browser_webview)
         browserWebView.settings.javaScriptEnabled = true
 
+        val intentMainActivity = Intent()
+
         class browserWebViewClient : WebViewClient() {
             //not yet...
         }
