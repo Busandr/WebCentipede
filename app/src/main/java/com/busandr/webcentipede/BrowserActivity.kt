@@ -36,5 +36,11 @@ class BrowserActivity: AppCompatActivity() {
         val confirmLink: View = findViewById(R.id.confirmLink)
         
         browserWebView.loadUrl("https://$linkStr")
+
+        browserWebView.webChromeClient = object : WebChromeClient() {
+            override fun onReceivedIcon(view: WebView, icon: Bitmap) {
+                super.onReceivedIcon(view, icon)
+            }
+        }
     }
 }
