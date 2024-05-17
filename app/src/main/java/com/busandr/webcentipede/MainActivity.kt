@@ -24,6 +24,11 @@ import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
+    val toBrowser = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result : ActivityResult ->
+        Log.i(TAG, "toBrowser")
+
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
