@@ -4,3 +4,6 @@ Like
 - Watching for exam results
 - Tracking good price
 - Laws changing
+
+Structure:
+SQLite
