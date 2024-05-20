@@ -26,6 +26,9 @@ class MainActivity : AppCompatActivity() {
 
     val toBrowser = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result : ActivityResult ->
         Log.i(TAG, "toBrowser")
+        if (result.resultCode == Activity.RESULT_OK) {
+            
+        }
 
     }
 
