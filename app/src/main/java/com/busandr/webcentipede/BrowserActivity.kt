@@ -37,10 +37,5 @@ class BrowserActivity: AppCompatActivity() {
         
         browserWebView.loadUrl("https://$linkStr")
 
-        browserWebView.webChromeClient = object : WebChromeClient() {
-            override fun onReceivedIcon(view: WebView, icon: Bitmap) {
-                super.onReceivedIcon(view, icon)
-            }
-        }
     }
 }
