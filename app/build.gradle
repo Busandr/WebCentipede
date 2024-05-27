@@ -54,4 +54,11 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.0'
     implementation "androidx.preference:preference-ktx:1.0.0"
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5'
+
+  
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    implementation 'androidx.datastore:datastore-preferences-rxjava3:1.0.0'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
 }
