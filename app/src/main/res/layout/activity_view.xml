@@ -15,5 +15,13 @@
         app:titleTextColor="@color/white"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    
+    <WebView
+        android:id="@+id/browser_webview"
+        android:layout_width="match_parent"
+        android:layout_height="620dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar">
   
 </androidx.constraintlayout.widget.ConstraintLayout>
