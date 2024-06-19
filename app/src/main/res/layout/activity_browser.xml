@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context="com.busandr.webcentipede.BrowserActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_browser"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/grey"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextColor="@color/white" />
+    
     <WebView
         android:id="@+id/browser_webview"
         android:layout_width="match_parent"
