@@ -26,8 +26,6 @@ class BrowserActivity: AppCompatActivity() {
         var browserWebView: WebView = findViewById(R.id.browser_webview)
         browserWebView.settings.javaScriptEnabled = true
 
-        val intentMainActivity = Intent()
-
         class browserWebViewClient : WebViewClient() {
             //not yet...
         }
@@ -36,6 +34,8 @@ class BrowserActivity: AppCompatActivity() {
         val confirmLink: View = findViewById(R.id.confirmLink)
         
         browserWebView.loadUrl("https://$linkStr")
+
+        
 
     }
 }
