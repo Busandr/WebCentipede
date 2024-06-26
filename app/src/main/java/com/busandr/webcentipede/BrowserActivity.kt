@@ -22,7 +22,7 @@ class BrowserActivity: AppCompatActivity() {
         setContentView(R.layout.activity_browser)
         val TAG = "BrowserActivity"
         
-        val linkStr = intent.getStringExtra("site").toString()
+        val linkStr = "google.com"
         var browserWebView: WebView = findViewById(R.id.browser_webview)
         browserWebView.settings.javaScriptEnabled = true
 
