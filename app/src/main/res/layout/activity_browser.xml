@@ -28,6 +28,18 @@
             android:layout_height="wrap_content"
             android:contentDescription="Plus Icon"
             android:src="@color/cardview_dark_background" />
+        
+        <EditText
+            android:id="@+id/searchbar_browser"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/button_enter"
+            android:layout_toEndOf="@id/icon_image"
+            android:hint="Enter text here"
+            android:minHeight="48dp"
+            android:maxLines="1"
+            android:paddingStart="10dp" />
+
         </RelativeLayout>
     
     <WebView
