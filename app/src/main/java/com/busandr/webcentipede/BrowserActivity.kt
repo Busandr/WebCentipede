@@ -21,7 +21,10 @@ class BrowserActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_browser)
         val TAG = "BrowserActivity"
-        
+
+
+        val toolbarMain = findViewById<Toolbar>(R.id.toolbar_browser)
+        setSupportActionBar(toolbarMain)
         val linkStr = "google.com"
         var browserWebView: WebView = findViewById(R.id.browser_webview)
         var searchBar = findViewById<EditText>(R.id.searchbar_browser)
