@@ -24,14 +24,6 @@ import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
-    val toBrowser = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result : ActivityResult ->
-        Log.i(TAG, "toBrowser")
-        if (result.resultCode == Activity.RESULT_OK) {
-            
-        }
-
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -61,6 +53,11 @@ class MainActivity : AppCompatActivity() {
         //fab starting dialog for adding link
         val setLink: View = findViewById(R.id.setLink)
         setLink.setOnClickListener {
+
+            val browserIntent = Intent(this, BrowserActivity::class.java)
+            this.startActivity(intent)
+
+            //?
             val addLinkDialog = LayoutInflater.from(this).inflate(R.layout.add_link_dialog, null)
 
             val positiveButtonClick =
@@ -69,12 +66,7 @@ class MainActivity : AppCompatActivity() {
                     val textInputURL = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_URL).text.toString()
                     val textInputName = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_name).text.toString()
 
-                    
-                    val intent = Intent(this, BrowserActivity::class.java)
-                    intent.putExtra("site", textInputURL)
-                    this.startActivity(intent)
-
-                    
+                                        
                     val linkInstance = Link(name = textInputName, url = textInputURL)
 
                     //add the link to list
