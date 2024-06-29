@@ -86,22 +86,6 @@ class MainActivity : AppCompatActivity() {
 
                 }
 
-            val negativeButtonClick = { dialog: DialogInterface, which: Int ->
-
-            }
-
-
-            val builder = AlertDialog.Builder(this).setView(addLinkDialog)
-
-            //set the alert dialog
-            builder.setTitle("Adding new link")
-                .setMessage("Add new link?")
-                .setPositiveButton("OK", positiveButtonClick)
-                .setNegativeButton("Cancel", negativeButtonClick)
-                .create()
-                .show()
-
-            builder.setCancelable(true)
 
         }
     }
