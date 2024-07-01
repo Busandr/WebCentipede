@@ -57,34 +57,6 @@ class MainActivity : AppCompatActivity() {
             val browserIntent = Intent(this, BrowserActivity::class.java)
             this.startActivity(intent)
 
-            //?
-            val addLinkDialog = LayoutInflater.from(this).inflate(R.layout.add_link_dialog, null)
-
-            val positiveButtonClick =
-                { dialog: DialogInterface, which: Int ->
-
-                    val textInputURL = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_URL).text.toString()
-                    val textInputName = addLinkDialog.findViewById<TextInputEditText>(R.id.textInputEditText_name).text.toString()
-
-                                        
-                    val linkInstance = Link(name = textInputName, url = textInputURL)
-
-                    //add the link to list
-                    if (textInputURL.isEmpty())
-                        Toast.makeText(this, "Fill this", Toast.LENGTH_SHORT).show()
-                    else {
-                
-//                        linkList.add(Link(name = textInputURL))
-                        linkList.add(linkInstance)
-                        linkAdapter.notifyItemInserted(linkList.lastIndex)
-//                        var insertCheck = dbHelper.insertLink(Link(name = textInputURL))
-                        var insertCheck = dbHelper.insertLink(linkInstance)
-                        //todo make warning for not saving
-                        if (insertCheck < 0)
-                            Toast.makeText(this, "Not saved", Toast.LENGTH_SHORT).show()
-                    }
-
-                }
 
 
         }
