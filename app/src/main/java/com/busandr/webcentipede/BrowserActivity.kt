@@ -28,7 +28,11 @@ class BrowserActivity: AppCompatActivity() {
         val linkStr = "google.com"
         var browserWebView: WebView = findViewById(R.id.browser_webview)
         var searchBar = findViewById<EditText>(R.id.searchbar_browser)
-        
+
+       searchBar.setOnEditorActionListener{
+           
+       }
+
         browserWebView.settings.javaScriptEnabled = true
 
         class browserWebViewClient : WebViewClient() {
