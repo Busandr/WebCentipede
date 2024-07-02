@@ -41,9 +41,11 @@ class BrowserActivity: AppCompatActivity() {
         
         browserWebView.webViewClient = browserWebViewClient()
         val confirmLink: View = findViewById(R.id.confirmLink)
-        
-        browserWebView.loadUrl("https://$linkStr")
 
+        CoroutineScope(Dispatchers.Main).launch {
+
+            browserWebView.loadUrl(linkStr)
+        }
         
 
     }
