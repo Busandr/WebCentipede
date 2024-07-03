@@ -30,7 +30,10 @@ class BrowserActivity: AppCompatActivity() {
         var searchBar = findViewById<EditText>(R.id.searchbar_browser)
 
        searchBar.setOnEditorActionListener{
-           
+           v, actionId, event ->
+           if (actionId == EditorInfo.IME_ACTION_DONE || event != null && event.keyCode == KeyEvent.KEYCODE_ENTER) {
+
+           }
        }
 
         browserWebView.settings.javaScriptEnabled = true
