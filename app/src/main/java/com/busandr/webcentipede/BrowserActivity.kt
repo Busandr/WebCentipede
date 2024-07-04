@@ -32,7 +32,8 @@ class BrowserActivity: AppCompatActivity() {
        searchBar.setOnEditorActionListener{
            v, actionId, event ->
            if (actionId == EditorInfo.IME_ACTION_DONE || event != null && event.keyCode == KeyEvent.KEYCODE_ENTER) {
-
+               linkStr = searchBar.text.toString()
+               browserWebView.loadUrl(linkStr)
            }
        }
 
