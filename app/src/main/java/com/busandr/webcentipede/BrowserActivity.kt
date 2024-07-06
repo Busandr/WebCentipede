@@ -35,6 +35,7 @@ class BrowserActivity: AppCompatActivity() {
                linkStr = searchBar.text.toString()
                browserWebView.loadUrl(linkStr)
            }
+           false
        }
 
         browserWebView.settings.javaScriptEnabled = true
