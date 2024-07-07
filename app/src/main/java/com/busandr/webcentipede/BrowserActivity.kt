@@ -52,6 +52,5 @@ class BrowserActivity: AppCompatActivity() {
             browserWebView.loadUrl(linkStr)
         }
         
-
     }
 }
