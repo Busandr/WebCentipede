@@ -46,6 +46,10 @@ class BrowserActivity: AppCompatActivity() {
         
         browserWebView.webViewClient = browserWebViewClient()
         val confirmLink: View = findViewById(R.id.confirmLink)
+        confirmLink.setOnClickListener {
+            val intentMainActivity = Intent(this, MainActivity::class.java)
+            startActivity(intentMainActivity)
+        }
 
         CoroutineScope(Dispatchers.Main).launch {
 
