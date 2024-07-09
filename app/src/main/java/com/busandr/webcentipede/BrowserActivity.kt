@@ -49,6 +49,7 @@ class BrowserActivity: AppCompatActivity() {
         confirmLink.setOnClickListener {
             val intentMainActivity = Intent(this, MainActivity::class.java)
             startActivity(intentMainActivity)
+            finish()
         }
 
         CoroutineScope(Dispatchers.Main).launch {
