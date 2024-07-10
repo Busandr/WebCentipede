@@ -4,7 +4,7 @@ import android.graphics.Bitmap
 import java.util.UUID
 
 data class Link(
-    var name: String,
+    var name: String = "google.com",
     val url: String,
     val id: String = createId(),
     val creationTime: Long = System.currentTimeMillis(),
