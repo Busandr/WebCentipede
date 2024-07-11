@@ -28,6 +28,7 @@ class BrowserActivity: AppCompatActivity() {
         val linkStr = "google.com"
         var browserWebView: WebView = findViewById(R.id.browser_webview)
         var searchBar = findViewById<EditText>(R.id.searchbar_browser)
+        var faviconImage: ImageView = findViewById(R.id.icon_image)
 
        searchBar.setOnEditorActionListener{
            v, actionId, event ->
