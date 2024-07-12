@@ -41,11 +41,6 @@ class BrowserActivity: AppCompatActivity() {
 
         browserWebView.settings.javaScriptEnabled = true
 
-        class browserWebViewClient : WebViewClient() {
-            //not yet...
-        }
-        
-        browserWebView.webViewClient = browserWebViewClient()
         val confirmLink: View = findViewById(R.id.confirmLink)
         confirmLink.setOnClickListener {
             val dbHelper = DatabaseHelper(this)
@@ -58,6 +53,13 @@ class BrowserActivity: AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
 
             browserWebView.loadUrl(linkStr)
+            
+            browserWebView.webViewClient = object : WebViewClient() {
+                override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                    view?.loadUrl(request?.url.toString())
+                    return true 
+                }
+            }
         }
         
     }
