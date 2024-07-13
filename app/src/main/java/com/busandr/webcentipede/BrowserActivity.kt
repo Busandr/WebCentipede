@@ -60,6 +60,14 @@ class BrowserActivity: AppCompatActivity() {
                     return true 
                 }
             }
+            
+            browserWebView.webChromeClient = object : WebChromeClient() {
+                override fun onReceivedIcon(view: WebView?, icon: Bitmap?) {
+                    super.onReceivedIcon(view, icon)
+                    val favicon = view?.favicon
+                    faviconImage.setImageBitmap(icon)
+                }
+            }
         }
         
     }
