@@ -16,7 +16,7 @@
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:titleTextColor="@color/white" />
 
-    <RelativeLayout
+    <LinearLayout
         android:id="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -40,7 +40,7 @@
             android:maxLines="1"
             android:paddingStart="10dp" />
 
-        </RelativeLayout>
+        </LinearLayout>
     
     <WebView
         android:id="@+id/browser_webview"
