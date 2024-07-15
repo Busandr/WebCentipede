@@ -31,7 +31,7 @@
         
         <EditText
             android:id="@+id/searchbar_browser"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toStartOf="@id/button_enter"
             android:layout_toEndOf="@id/icon_image"
