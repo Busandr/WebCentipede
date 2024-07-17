@@ -5,5 +5,5 @@ Like:
 - Tracking good price/course
 - Laws changing
 
-Structure:
+Architecture:
 SQLite, AndroidX
