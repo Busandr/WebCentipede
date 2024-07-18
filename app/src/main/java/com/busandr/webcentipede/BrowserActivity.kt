@@ -50,6 +50,7 @@ class BrowserActivity: AppCompatActivity() {
             finish()
         }
 
+        var faviconByteArray: ByteArray = "default_array".toByteArray()
         CoroutineScope(Dispatchers.Main).launch {
 
             browserWebView.loadUrl(linkStr)
