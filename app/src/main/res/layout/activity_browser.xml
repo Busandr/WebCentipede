@@ -41,13 +41,23 @@
             android:paddingStart="10dp" />
 
         </LinearLayout>
-    
-    <WebView
-        android:id="@+id/browser_webview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </WebView>
+    
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="@id/confirmLink"
+    app:layout_constraintTop_toBottomOf="@id/search_bar">
+        <WebView
+            android:id="@+id/browser_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </WebView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    
     
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/confirmLink"
