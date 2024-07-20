@@ -66,6 +66,9 @@ class BrowserActivity: AppCompatActivity() {
                 override fun onReceivedIcon(view: WebView?, icon: Bitmap?) {
                     super.onReceivedIcon(view, icon)
                     faviconImage.setImageBitmap(icon)
+                    val byteArrayOutputStream = ByteArrayOutputStream()
+                    icon?.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+                    faviconByteArray = byteArrayOutputStream.toByteArray()
                 }
             }
         }
