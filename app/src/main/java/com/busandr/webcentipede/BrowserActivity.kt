@@ -29,6 +29,7 @@ class BrowserActivity: AppCompatActivity() {
         var browserWebView: WebView = findViewById(R.id.browser_webview)
         var searchBar = findViewById<EditText>(R.id.searchbar_browser)
         var faviconImage: ImageView = findViewById(R.id.icon_image)
+        var swipeRefreshLayout: SwipeRefreshLayout =  findViewById(R.id.swipe_refresh_layout)
 
        searchBar.setOnEditorActionListener{
            v, actionId, event ->
