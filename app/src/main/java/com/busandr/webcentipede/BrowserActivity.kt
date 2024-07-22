@@ -42,6 +42,9 @@ class BrowserActivity: AppCompatActivity() {
 
         browserWebView.settings.javaScriptEnabled = true
 
+        swipeRefreshLayout.setOnRefreshListener {
+            browserWebView.reload()
+        }
         val confirmLink: View = findViewById(R.id.confirmLink)
         confirmLink.setOnClickListener {
             val dbHelper = DatabaseHelper(this)
