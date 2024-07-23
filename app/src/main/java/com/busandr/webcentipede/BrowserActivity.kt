@@ -44,6 +44,9 @@ class BrowserActivity: AppCompatActivity() {
 
         swipeRefreshLayout.setOnRefreshListener {
             browserWebView.reload()
+            runOnUiThread {
+                swipeRefreshLayout.isRefreshing = false
+            }
         }
         val confirmLink: View = findViewById(R.id.confirmLink)
         confirmLink.setOnClickListener {
