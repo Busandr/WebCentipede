@@ -16,6 +16,17 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
+        
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_button"
+            android:layout_width="121dp"
+            android:layout_height="49dp"
+            android:text="Checking"
+            android:layout_marginStart="220dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
     </androidx.appcompat.widget.Toolbar>
 
     <Button
