@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
         val toolbar_main = findViewById<Toolbar>(R.id.toolbar_main)
         setSupportActionBar(toolbar_main)
 
+        val switchButton = findViewById<SwitchCompat>(R.id.switch_button)
+
 
         //button to 2 activity
         findViewById<Button>(R.id.supabutton)
