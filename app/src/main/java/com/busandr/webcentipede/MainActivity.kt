@@ -33,7 +33,13 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar_main)
 
         val switchButton = findViewById<SwitchCompat>(R.id.switch_button)
-
+        switchButton.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                startService(Intent(this, VisitService::class.java))
+            } else {
+                stopService(Intent(this, VisitService::class.java))
+            }
+        }
 
         //button to 2 activity
         findViewById<Button>(R.id.supabutton)
