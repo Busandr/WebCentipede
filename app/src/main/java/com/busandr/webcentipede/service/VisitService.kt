@@ -11,11 +11,18 @@ class VisitService: Service() {
       "VisitService",
       NotificationManager.IMPORTANCE_DEFAULT
     )
+    (getSystemService(NOTIFICATION_SERVICE) as NotificationManager).createNotificationChannel(
+            notificationChannel
+        )
   }
 
   override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
     
     return START_STICKY
   }
+
+  override fun onBind(intent: Intent): IBinder? {
+    return null
+    }
 
 }
