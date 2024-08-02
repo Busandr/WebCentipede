@@ -17,6 +17,12 @@ class VisitService: Service() {
   }
 
   override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
+
+    val notifications = NotificationCompat.Builder(this, channelId)
+        .setContentTitle("watching service")
+        .setContentText("input")
+        .setSmallIcon(R.drawable.notification_bg)
+        .build()
     
     return START_STICKY
   }
