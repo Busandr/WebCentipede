@@ -3,9 +3,13 @@ package com.busandr.webcentipede.service
 import android.app.Service
 
 class VisitService: Service() {
+  private val TAG = "VisitService"
+  private val channelId = "Notification from Service"
+  
   override fun onCreate() {
-    
     super.onCreate()
+    Log.i(TAG, "Service onCreate")
+    
     val notificationChannel = NotificationChannel(
       channelId,
       "VisitService",
