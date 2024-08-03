@@ -23,6 +23,15 @@ class VisitService: Service() {
         .setContentText("input")
         .setSmallIcon(R.drawable.notification_bg)
         .build()
+
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED && Build.VERSION.SDK_INT > 32
+        ) {
+            Toast.makeText(this, "you AGAIN dont wanna be aware of...", Toast.LENGTH_LONG).show()
+
+        }
     
     return START_STICKY
   }
