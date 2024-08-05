@@ -36,6 +36,8 @@ class VisitService: Service() {
             Toast.makeText(this, "you AGAIN dont wanna be aware of...", Toast.LENGTH_LONG).show()
 
         }
+        val notificationManager = NotificationManagerCompat.from(applicationContext)
+        notificationManager.notify(3, notifications)
     
     return START_STICKY
   }
