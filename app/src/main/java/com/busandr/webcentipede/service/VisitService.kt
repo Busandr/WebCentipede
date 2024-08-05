@@ -46,4 +46,9 @@ class VisitService: Service() {
     return null
     }
 
+  override fun onDestroy() {
+    super.onDestroy()
+  }
+
+
 }
