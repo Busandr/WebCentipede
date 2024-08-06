@@ -48,6 +48,10 @@ class VisitService: Service() {
 
   override fun onDestroy() {
     super.onDestroy()
+    Log.i(TAG, "Service onDestroy")
+    stopForeground(STOP_FOREGROUND_REMOVE)
+    stopSelf()
+    
   }
 
 
