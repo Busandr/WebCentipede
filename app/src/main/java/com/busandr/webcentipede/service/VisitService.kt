@@ -22,6 +22,7 @@ class VisitService: Service() {
 
   override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
 
+    Log.i(TAG, "service is started")
     val notifications = NotificationCompat.Builder(this, channelId)
         .setContentTitle("watching service")
         .setContentText("input")
@@ -38,6 +39,7 @@ class VisitService: Service() {
         }
         val notificationManager = NotificationManagerCompat.from(applicationContext)
         notificationManager.notify(3, notifications)
+        startForeground(1, notifications)
     
     return START_STICKY
   }
