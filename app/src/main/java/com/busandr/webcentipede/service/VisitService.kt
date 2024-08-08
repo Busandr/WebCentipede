@@ -40,6 +40,12 @@ class VisitService: Service() {
         val notificationManager = NotificationManagerCompat.from(applicationContext)
         notificationManager.notify(3, notifications)
         startForeground(1, notifications)
+
+        GlobalScope.launch {
+          val client = OkHttpClient()
+        
+        
+        }
     
     return START_STICKY
   }
