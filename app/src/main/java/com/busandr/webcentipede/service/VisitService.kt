@@ -43,7 +43,7 @@ class VisitService: Service() {
 
         GlobalScope.launch {
           val client = OkHttpClient()
-        
+          val url = "https://dayspedia.com/time/online/"       
         
         }
     
