@@ -44,7 +44,9 @@ class VisitService: Service() {
         GlobalScope.launch {
           val client = OkHttpClient()
           val url = "https://dayspedia.com/time/online/"       
-        
+          val request = Request.Builder()
+            .url(url)
+            .build()
         }
     
     return START_STICKY
