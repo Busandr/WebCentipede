@@ -48,6 +48,10 @@ class VisitService: Service() {
             .url(url)
             .build()
         }
+        client.newCall(request).enqueue(object : Callback {
+
+        }
+
     
     return START_STICKY
   }
