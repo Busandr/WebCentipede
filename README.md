@@ -5,5 +5,8 @@ Like:
 - Tracking good price/course
 - Laws changing
 
-Architecture:
+Stack:
 SQLite, AndroidX
+
+Architecture:
+Service and eberybody around
