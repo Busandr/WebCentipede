@@ -42,15 +42,16 @@ class VisitService: Service() {
         startForeground(1, notifications)
 
         GlobalScope.launch {
-          val client = OkHttpClient()
+          val httpClient = OkHttpClient()
           val url = "https://dayspedia.com/time/online/"       
           val request = Request.Builder()
             .url(url)
             .build()
         }
-        client.newCall(request).enqueue(object : Callback {
+        httpClient.newCall(request).enqueue(object : Callback {
           override fun onResponse(call: Call, response: Response) {
-          
+            val responseBody = response.body?.string()
+                                      
           }
 
 
