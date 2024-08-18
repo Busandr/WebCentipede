@@ -81,4 +81,8 @@ class BrowserActivity: AppCompatActivity() {
         }
         
     }
+    override fun onResume() {
+        super.onResume()
+        Log.i(TAG, "onResume")
+    }
 }
