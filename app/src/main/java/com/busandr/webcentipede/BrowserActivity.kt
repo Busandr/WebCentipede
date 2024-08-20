@@ -79,6 +79,10 @@ class BrowserActivity: AppCompatActivity() {
                 }
             }
         }
+        confirmLink.setOnClickListener {
+            val intentMainActivity = Intent(this, MainActivity::class.java)
+
+        }
         
     }
     override fun onResume() {
