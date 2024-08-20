@@ -5,9 +5,6 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-
-
-    <!-- Add in TextView to display link name   -->
     <ImageView
         android:id="@+id/link_pic"
         android:layout_width="wrap_content"
