@@ -81,6 +81,8 @@ class BrowserActivity: AppCompatActivity() {
         }
         confirmLink.setOnClickListener {
             val intentMainActivity = Intent(this, MainActivity::class.java)
+            startActivity(intentMainActivity)
+            Log.i(TAG, "intent to main")
 
         }
         
