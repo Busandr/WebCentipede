@@ -55,6 +55,7 @@ class BrowserActivity: AppCompatActivity() {
             val intentMainActivity = Intent(this, MainActivity::class.java)
             startActivity(intentMainActivity)
             finish()
+            Log.i(TAG, "intent to main")
         }
 
         var faviconByteArray: ByteArray = "default_array".toByteArray()
@@ -78,12 +79,6 @@ class BrowserActivity: AppCompatActivity() {
                     faviconByteArray = byteArrayOutputStream.toByteArray()
                 }
             }
-        }
-        confirmLink.setOnClickListener {
-            val intentMainActivity = Intent(this, MainActivity::class.java)
-            startActivity(intentMainActivity)
-            Log.i(TAG, "intent to main")
-
         }
         
     }
