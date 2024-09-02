@@ -7,5 +7,9 @@ class HistoryActivity : FragmentActivity(){
 
     val toolbarHistory = findViewById<Toolbar>(R.id.toolbar_history)
     
+    var textHistory: TextView = findViewById(R.id.text_history)
+    val buttonPrevVersion: Button = findViewById(R.id.prev_version)
+    val buttonNextVersion: Button = findViewById(R.id.next_version)
+    
   }
 }
