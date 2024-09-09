@@ -7,6 +7,10 @@ import android.database.sqlite.SQLiteOpenHelper
 
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
+    
+    object DatabaseManager {
+
+    }
 
     companion object {
         private const val DATABASE_NAME = "links_base.db"
