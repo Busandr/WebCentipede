@@ -9,7 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     
     object DatabaseManager {
-
+        private var databaseHelper: DatabaseHelper? = null
+        fun getInstance(context: Context?): DatabaseHelper? {
+            if (databaseHelper == null) {
+                databaseHelper = DatabaseHelper(context!!, 1)
+            }
+            return databaseHelper
+        }
     }
 
     companion object {
