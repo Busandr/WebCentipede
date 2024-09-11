@@ -50,7 +50,7 @@ class BrowserActivity: AppCompatActivity() {
         }
         val confirmLink: View = findViewById(R.id.confirmLink)
         confirmLink.setOnClickListener {
-            val dbHelper = DatabaseHelper(this)
+            val dbHelper = DatabaseHelper.DatabaseManager.getInstance(this)
             val insertCheck = dbHelper.insertLink(Link(url = linkStr))
             val intentMainActivity = Intent(this, MainActivity::class.java)
             startActivity(intentMainActivity)
