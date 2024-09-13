@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
             }
 
         //filling recyclerview with data
-        val dbHelper = DatabaseHelper(this)
-        val linkList = dbHelper.readAll()
+        val dbHelper = DatabaseHelper.DatabaseManager.getInstance(this)
+        val linkList = dbHelper!!.readAll()
 
         val linkAdapter = LinkAdapter(this, linkList)
 
