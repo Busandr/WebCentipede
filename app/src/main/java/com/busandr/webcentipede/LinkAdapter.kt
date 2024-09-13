@@ -37,6 +37,7 @@ class LinkAdapter(private val context: Context, private val linkList: MutableLis
         holder.itemView.setOnClickListener{
 
             val intent = Intent(context, HistoryActivity::class.java)
+            intent.putExtra("link_id", linkPosition.id)
             context.startActivity(intent)
         }
 
