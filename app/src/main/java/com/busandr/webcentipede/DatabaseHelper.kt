@@ -4,6 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 
 
 class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -22,6 +23,8 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         private const val DATABASE_NAME = "links_base.db"
         private const val DATABASE_VERSION = 1
         private const val TABLE_NAME = "links"
+
+        private val TAG = "DatabaseHelper"
         
         const val NAME = "name"
         const val URL = "url"
@@ -29,6 +32,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
     }
 
     override fun onCreate(db: SQLiteDatabase) {
+        Log.i(TAG, "onCreate $DB_VERSION, $TABLE_NAME")
         val CREATE_USER_TABLE = ("CREATE TABLE " + TABLE_NAME +
                 " (" + 
                 NAME + " TEXT," +
