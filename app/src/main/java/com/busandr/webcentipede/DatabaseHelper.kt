@@ -123,7 +123,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         val db = this.writableDatabase
 
         val success = db.delete(TABLE_NAME, null, null)
-
+        Log.i(TAG, "$success deleteAll")
         db.close()
         return success
     }
