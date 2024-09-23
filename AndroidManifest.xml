@@ -25,9 +25,6 @@
             android:exported="false"
             android:label="@string/title_activity_data_compare" />
         <activity
-            android:name=".ViewActivity"
-            android:exported="false" />
-        <activity
             android:name=".LinkViewActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
