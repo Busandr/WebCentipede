@@ -1,4 +1,47 @@
 <resources>
     <string name="app_name">WebCentipede</string>
+    <string name="settings">Settings</string>
+    <string name="action_settings">Settings</string>
+    <!--     Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!--    MainActivity-->
+    <string name="URL_placeholder">Place for link</string>
+    <string name="name_placeholder">Place for site`s name</string>
+    <!--    AddingDialog-->
+    <string name="dialog_start_game">Add ur data already</string>
+    <string name="start">Add</string>
+    <string name="cancel">Cancel</string>
+    <!--fragments    -->
+    <string name="lorem_ipsum">lorepimsum</string>
+    <!--  LinkCreate  -->
+    <string name="add_link">Add your link</string>
+    <string name="Freq_req">Frequency of requests</string>
+
+    <string name="setLink">Add link</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails</string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
     <string name="title_activity_settings">MainSettingsActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm_link">Confirm your link</string>
 </resorces>
