@@ -4,16 +4,18 @@ import android.graphics.Bitmap
 import java.util.UUID
 
 data class Link(
-    var name: String = "google.com",
+    var name: String,
     val url: String,
     val id: String = createId(),
-    val creationTime: Long = System.currentTimeMillis(),
-    var favicon: Bitmap? = null,
+    val favicon: ByteArray,
+    var content: String = "empty, for now",
     var isActive: Boolean = true,
-    var keepData: Boolean = false,
-
+    var lastCheckTime: LocalDateTime = LocalDateTime.MIN,
+    var lastCheckResult: String = "404",
     var wifiFrequency: Long = 1,
-    var mobileFrequency: Long = 1
+    var mobileFrequency: Long = 1,
+    val creationTime: String = LocalDateTime.now().toString(),
+    var keepData: Boolean = false
 ) {
     companion object{
         fun createId(): String{
