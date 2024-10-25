@@ -33,6 +33,7 @@ class LinkAdapter(private val context: Context, private val linkList: MutableLis
     override fun onBindViewHolder(holder: LinkViewHolder, position: Int) {
         val linkPosition = linkList[position]
         holder.linkName.text = linkPosition.name
+        val bitmapFavicon = BitmapFactory.decodeByteArray(linkPosition.favicon, 0, linkPosition.favicon.size)
 
         holder.itemView.setOnClickListener{
 
