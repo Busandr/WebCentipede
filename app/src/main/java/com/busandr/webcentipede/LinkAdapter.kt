@@ -34,6 +34,8 @@ class LinkAdapter(private val context: Context, private val linkList: MutableLis
         val linkPosition = linkList[position]
         holder.linkName.text = linkPosition.name
         val bitmapFavicon = BitmapFactory.decodeByteArray(linkPosition.favicon, 0, linkPosition.favicon.size)
+        val scaledBitmap = bitmapFavicon?.let {  Bitmap.createScaledBitmap(bitmapFavicon, 64, 64, true)}
+            ?: BitmapFactory.decodeFile(R.drawable.baseline_add_24.toString())
 
         holder.itemView.setOnClickListener{
 
