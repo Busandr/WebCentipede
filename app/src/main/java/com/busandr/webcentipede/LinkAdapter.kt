@@ -37,6 +37,8 @@ class LinkAdapter(private val context: Context, private val linkList: MutableLis
         val scaledBitmap = bitmapFavicon?.let {  Bitmap.createScaledBitmap(bitmapFavicon, 64, 64, true)}
             ?: BitmapFactory.decodeFile(R.drawable.baseline_add_24.toString())
 
+        holder.linkPic.setImageBitmap(scaledBitmap)
+
         holder.itemView.setOnClickListener{
 
             val intent = Intent(context, HistoryActivity::class.java)
