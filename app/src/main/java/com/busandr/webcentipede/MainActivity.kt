@@ -69,6 +69,10 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+    override fun onStop() {
+        super.onStop()
+        Log.i(TAG, "onStop")
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
