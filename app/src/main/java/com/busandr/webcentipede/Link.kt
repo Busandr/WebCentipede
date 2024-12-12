@@ -10,7 +10,7 @@ data class Link(
     val favicon: ByteArray,
     var content: String = "empty, for now",
     var isActive: Boolean = true,
-    var lastCheckTime: LocalDateTime = LocalDateTime.MIN,
+    var lastCheckTime: LocalDateTime = LocalDateTime.now(),
     var lastCheckResult: String = "404",
     var wifiFrequency: Long = 1,
     var mobileFrequency: Long = 1,
