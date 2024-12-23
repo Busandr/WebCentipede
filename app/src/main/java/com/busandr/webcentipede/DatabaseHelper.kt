@@ -29,6 +29,9 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         const val NAME = "name"
         const val URL = "url"
         const val ID = "id"
+        const val FAV = "favicon"
+        const val CONTENT = "content"
+
     }
 
     override fun onCreate(db: SQLiteDatabase) {
