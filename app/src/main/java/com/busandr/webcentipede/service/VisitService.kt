@@ -40,6 +40,7 @@ class VisitService: Service() {
         val notificationManager = NotificationManagerCompat.from(applicationContext)
         notificationManager.notify(3, notifications)
         startForeground(1, notifications)
+        val dbHelper = DatabaseHelper.DatabaseManager.getInstance(this)
 
         GlobalScope.launch {
           val httpClient = OkHttpClient()
