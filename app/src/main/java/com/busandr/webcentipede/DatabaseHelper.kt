@@ -38,9 +38,12 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         Log.i(TAG, "onCreate $DB_VERSION, $TABLE_NAME")
         val CREATE_USER_TABLE = ("CREATE TABLE " + TABLE_NAME +
                 " (" + 
-                NAME + " TEXT," +
-                URL + " TEXT," +
-                ID + " TEXT" +
+                NAME + " TEXT, " +
+                URL + " TEXT, " +
+                ID + " TEXT, " +
+                FAV + " BLOB, " +
+                CONTENT + " TEXT, " +
+                ISACTIVE + " INTEGER" +
                 ")" )
         db.execSQL(CREATE_USER_TABLE)
     }
