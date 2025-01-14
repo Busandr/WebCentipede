@@ -42,8 +42,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
                 URL + " TEXT, " +
                 ID + " TEXT, " +
                 FAV + " BLOB, " +
-                CONTENT + " TEXT, " +
-                ISACTIVE + " INTEGER" +
+                CONTENT + " TEXT" +
                 ")" )
         db.execSQL(CREATE_USER_TABLE)
     }
