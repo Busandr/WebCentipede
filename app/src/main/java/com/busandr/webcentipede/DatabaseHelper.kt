@@ -77,11 +77,13 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
         var name: String
         var url: String
         var id: String
+        var favicon: ByteArray
         if (result.moveToFirst()) {
             do {
                 name = result.getString(result.getColumnIndexOrThrow("name"))
                 url = result.getString(result.getColumnIndexOrThrow("url"))
                 id = result.getString(result.getColumnIndexOrThrow("id"))
+                favicon = result.getBlob(result.getColumnIndexOrThrow("favicon")) ?: "fav is lost".toByteArray()
                 val link = Link(name, url,id)
                 list.add(link)
             } while (result.moveToNext())
