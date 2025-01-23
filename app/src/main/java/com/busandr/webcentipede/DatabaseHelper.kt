@@ -101,6 +101,7 @@ class DatabaseHelper(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME
             put(NAME, link.name)
             put(URL, link.url)
             put(ID, link.id)
+            put(FAV, link.favicon)
         }
         val success = db.insert(TABLE_NAME, null, values)
         db.close()
