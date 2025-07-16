@@ -1,25 +1,18 @@
 package com.busandr.webcentipede
 
-import android.graphics.Bitmap
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+import java.time.LocalDateTime
 import java.util.UUID
 
-data class Link(
-    var name: String,
+@Parcelize
+data class Link(// TODO: Snapshot
+    var name: String = "defname",
     val url: String,
-    val id: String = createId(),
-    val favicon: ByteArray,
-    var content: String = "empty, for now",
-    var isActive: Boolean = true,
-    var lastCheckTime: LocalDateTime = LocalDateTime.now(),
-    var lastCheckResult: String = "404",
-    var wifiFrequency: Long = 1,
-    var mobileFrequency: Long = 1,
-    val creationTime: String = LocalDateTime.now().toString(),
-    var keepData: Boolean = false
-) {
-    companion object{
-        fun createId(): String{
-            return UUID.randomUUID().toString()
-        }
-    }
-}
+    val id: String = UUID.randomUUID().toString(),
+    val favicon: ByteArray = "defname".toByteArray(),
+    val dateTime: String = LocalDateTime.now().toString(),
+    var content: String = "filler",
+    val creationTime: String = LocalDateTime.now().toString()
+
+) : Parcelable
