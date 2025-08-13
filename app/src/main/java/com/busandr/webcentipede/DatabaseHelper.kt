@@ -37,15 +37,8 @@ class DatabaseHelper(context: Context, DATABASE_VERSION: Int) :
 
     override fun onCreate(db: SQLiteDatabase) {
         Log.i(TAG, "onCreate $DB_VERSION, $TABLE_NAME")
-        val CREATE_USER_TABLE = ("CREATE TABLE " + TABLE_NAME +
-                "(" +
-                NAME + " TEXT, " +
-                URL + " TEXT, " +
-                ID + " TEXT, " +
-                FAV + " BLOB, " +
-                DATETIME + " TEXT, " +
-                CONTENT + " TEXT" +
-                ")")
+        val CREATE_USER_TABLE =
+            ("CREATE TABLE " + TABLE_NAME + "(" + NAME + " TEXT, " + URL + " TEXT, " + ID + " TEXT, " + FAV + " BLOB, " + DATETIME + " TEXT, " + CONTENT + " TEXT" + ")")
         db.execSQL(CREATE_USER_TABLE)
     }
 
@@ -79,13 +72,8 @@ class DatabaseHelper(context: Context, DATABASE_VERSION: Int) :
     fun readAllLinks(): MutableList<Link> {
         val list: MutableList<Link> = mutableListOf()
         val db = this.readableDatabase
-        val query = "WITH ranked AS (\n" +
-                "    SELECT *,\n" +
-                "           ROW_NUMBER() OVER (PARTITION BY $URL) as row_num\n" +
-                "    FROM $TABLE_NAME)" +
-                "SELECT *\n" +
-                "FROM ranked\n" +
-                "WHERE row_num = 1;"
+        val query =
+            "WITH ranked AS (\n" + "    SELECT *,\n" + "           ROW_NUMBER() OVER (PARTITION BY $URL) as row_num\n" + "    FROM $TABLE_NAME)" + "SELECT *\n" + "FROM ranked\n" + "WHERE row_num = 1;"
 
         val result = try {
             db.rawQuery(query, null)
@@ -108,12 +96,9 @@ class DatabaseHelper(context: Context, DATABASE_VERSION: Int) :
                 id = result.getString(result.getColumnIndexOrThrow("id"))
                 favicon = result.getBlob(result.getColumnIndexOrThrow("favicon"))
                     ?: "fav is lost".toByteArray()
-                content =
-                    result.getString(result.getColumnIndexOrThrow("content"))// ?: "content is lost"
-                datetime =
-                    result.getString(result.getColumnIndexOrThrow("datetime"))// ?: "content is lost"
-                val link =
-                    Link(name, url, id, favicon, datetime, content)//, creationTime, url, favicon)
+                content = result.getString(result.getColumnIndexOrThrow("content"))
+                datetime = result.getString(result.getColumnIndexOrThrow("datetime"))
+                val link = Link(name, url, id, favicon, datetime, content)
                 Log.i(TAG, link.toString())
                 list.add(link)
             } while (result.moveToNext())
@@ -169,11 +154,9 @@ class DatabaseHelper(context: Context, DATABASE_VERSION: Int) :
                 val name = cursor.getString(cursor.getColumnIndexOrThrow("name"))
                 val url = cursor.getString(cursor.getColumnIndexOrThrow("url"))
                 val id = cursor.getString(cursor.getColumnIndexOrThrow("id"))
-                val favicon =
-                    cursor.getBlob(cursor.getColumnIndexOrThrow("favicon")) //?: "fav is lost".toByteArray()
+                val favicon = cursor.getBlob(cursor.getColumnIndexOrThrow("favicon"))
                 val datetime = cursor.getString(cursor.getColumnIndexOrThrow("datetime"))
-                val content =
-                    cursor.getString(cursor.getColumnIndexOrThrow("content"))// ?: "content is lost"
+                val content = cursor.getString(cursor.getColumnIndexOrThrow("content"))
 
                 val link = Link(name, url, id, favicon, datetime, content)
                 snapshots.add(link)
@@ -184,38 +167,10 @@ class DatabaseHelper(context: Context, DATABASE_VERSION: Int) :
         }
     }
 
-    fun updateLink(link: Link): Int {
-        val db = this.writableDatabase
-        val cv = ContentValues().apply {
-            put(NAME, link.name)
-//            put(URL, link.url)
-//            put(ID, link.id)
-//            put(LASTCHECKTIME, link.lastCheckTime)
-            // TODO: add LCT to existing links... or create new
-//            put(LASTCHECKRESULT, link.lastCheckResult)
-        }
-        val success = db.update(TABLE_NAME, cv, "$ID = ?", arrayOf(link.id))
-        db.close()
-        return success
-    }
-
     fun deleteLink(id: String): Int {
         val db = this.writableDatabase
         val success = db.delete(TABLE_NAME, "id=?", arrayOf(id))
         db.close()
         return success
-    }
-
-    fun deleteAll(): Int {
-        val db = this.writableDatabase
-        val success = db.delete(DATABASE_NAME, null, null)
-        Log.i(TAG, "$success deleteAll")
-        db.close()
-        return success
-    }
-
-    fun addColumn() {
-        val db = writableDatabase // assume you have a SQLiteDatabase object
-        db.execSQL("ALTER TABLE $TABLE_NAME ADD COLUMN $CONTENT TEXT")
     }
 }
